@@ -1,2 +1,2 @@
 # valami
-Az elso projectem
+Az elso projectem, nagyon jo
