@@ -1,0 +1,13 @@
+plugin: device42.d42.d42
+ssl_check: false  # Ha self-signed cert van, állítsd false-ra
+debug: false
+clean_device_name: true  # Tisztítja a készülékneveket (opcionális)
+keyed_groups:  # Csoportosítás Device42 adatok alapján (opcionális)
+  - key: d42_service_level
+    prefix: ''
+    separator: ''
+  - key: d42_tags
+    prefix: tag_
+    separator: ''
+compose:  # Ansible változókat állíthatsz be Device42 adatokból (opcionális)
+  ansible_host: d42_ip_address
