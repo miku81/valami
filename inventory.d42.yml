@@ -5,14 +5,6 @@ clean_device_name: true  # Tisztítja a készülékneveket (opcionális)
 # Csak a Production service levelű gépeket húzza be
 strict: false  # opcionális, ha hibás adat van, ne szakadjon meg
 
-# Szűrő: csak ahol d42_service_level == "Production"
-filters:
-  d42_service_level: Production   # pontos egyezés
-# Vagy ha több tag közül bármelyik:
-  # d42_tags: prod|production|Prod
-# Vagy ha prefix/suffix van, pl. "Prod - Critical":
-# filters:
-#   d42_service_level: Prod*
 
 keyed_groups:  # Csoportosítás Device42 adatok alapján (opcionális)
   - key: d42_service_level
@@ -27,5 +19,5 @@ keyed_groups:  # Csoportosítás Device42 adatok alapján (opcionális)
     prefix: os_
 
 compose:  # Ansible változókat állíthatsz be Device42 adatokból (opcionális)
-  ansible_host: d42_ip_address
+  ansible_host: d42_name
 #
