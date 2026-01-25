@@ -14,3 +14,4 @@ keyed_groups:  # Csoportosítás Device42 adatok alapján (opcionális)
     separator: ''
 compose:  # Ansible változókat állíthatsz be Device42 adatokból (opcionális)
   ansible_host: d42_ip_address
+#
