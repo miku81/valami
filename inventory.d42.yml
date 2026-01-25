@@ -1,3 +1,4 @@
+---
 plugin: device42.d42.d42
 ssl_check: false  # Ha self-signed cert van, állítsd false-ra
 debug: false
