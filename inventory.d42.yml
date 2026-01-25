@@ -1,5 +1,7 @@
----
 plugin: device42.d42.d42
+url: https://192.168.1.190  # Pl. https://device42.company.com
+username: admin
+password: Adm!nd42
 ssl_check: false  # Ha self-signed cert van, állítsd false-ra
 debug: false
 clean_device_name: true  # Tisztítja a készülékneveket (opcionális)
