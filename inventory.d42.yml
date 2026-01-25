@@ -20,4 +20,8 @@ keyed_groups:  # Csoportosítás Device42 adatok alapján (opcionális)
 
 compose:  # Ansible változókat állíthatsz be Device42 adatokból (opcionális)
   ansible_host: d42_name
+  inventory_hostname: d42_name
+  ansible_fqdn: d42_name
+  #ansible_host: d42_ip_address
+
 #
