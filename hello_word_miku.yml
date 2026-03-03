@@ -15,4 +15,4 @@
         my_rows: "{{ csv_content | community.general.from_csv(fieldnames='vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gwi') }}"
     - name: print
       debug:
-        msg: " Ez lett: {{ my_row }}"
+        msg: " Ez lett: {{ my_rows }}"
