@@ -12,7 +12,7 @@
           #      register: srv_list
     - name: CSV string feldolgozása listává
       set_fact:
-        my_rows: "{{ csv_content | communiti.general.from_csv(fieldnames='vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gwi') }}"
+        my_rows: "{{ csv_content | community.general.from_csv(fieldnames='vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gwi') }}"
     - name: print
       debug:
         msg: " Ez lett: {{ my_row }}"
