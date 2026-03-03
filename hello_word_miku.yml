@@ -4,3 +4,9 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+    - name: CSV string feldolgozása listává
+      set_fact:
+        my_rows: "{{ csv_content | from_csv }}"
+    - name: print
+      debug:
+        msg: " Ez lett: {{ ansible_facts['my_row'] }}"
