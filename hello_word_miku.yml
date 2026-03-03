@@ -6,10 +6,10 @@
         msg: "Hello World!"
     - name: CSV Ferinek
       community.general.read_csv:
-      path: "{{ csv_content }}"
-      fieldnames: vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gw,
-      delimiter: ";"
-    register: srv_list
+        path: "{{ csv_content }}"
+        fieldnames: vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gw,
+        delimiter: ";"
+      register: srv_list
       #    - name: CSV string feldolgozása listává
       #      set_fact:
       #        my_rows: "{{ csv_content | from_csv }}"
