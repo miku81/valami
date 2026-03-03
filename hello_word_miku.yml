@@ -10,9 +10,19 @@
           #        fieldnames: vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gw,
           #        delimiter: ";"
           #      register: srv_list
-    - name: CSV string feldolgozása listává
+          #    - name: CSV string feldolgozása listává
+          #      set_fact:
+          #        my_rows: "{{ csv_content | community.general.from_csv(fieldnames='vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gwi',delimiter=';') }}"
+    - name: fact beallitas 
       set_fact:
-        my_rows: "{{ csv_content | community.general.from_csv(fieldnames='vcenter_host,esx_hostname,template_name,dns,suffix,vmname,disksize,memory,vcpu,ds,folder,vlan,ip,netmask,gwi',delimiter=';') }}"
+        my_rows: >-
+          {{ csv_content | community.general.from_csv(
+               fieldnames: ['vcenter_host', 'esx_hostname', 'template_name', 'dns', 'suffix',
+                        'vmname', 'disksize', 'memory', 'vcpu', 'ds', 'folder', 'vlan',
+                        'ip', 'netmask', 'gwi'],
+               delimiter: ';'
+         ) }}
+
     - name: print
       debug:
         msg: " Ez lett: {{ my_rows }}"
