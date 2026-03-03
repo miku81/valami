@@ -4,14 +4,28 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
-    - name: fact beallitas 
+    - name: Mezőnevek definiálása
       set_fact:
-        my_rows: >-
-          {{ csv_content | community.general.from_csv(
-               fieldnames: ['vcenter_host', 'esx_hostname', 'template_name', 'dns', 'suffix',
-                        'vmname', 'disksize', 'memory', 'vcpu', 'ds', 'folder', 'vlan',
-                        'ip', 'netmask', 'gwi'],
-               delimiter: ';') }}
+        csv_columns:
+          - vcenter_host
+          - esx_hostname
+          - template_name
+          - dns
+          - suffix
+          - vmname
+          - disksize
+          - memory
+          - vcpu
+          - ds
+          - folder
+          - vlan
+          - ip
+          - netmask
+          - gwi
+
+    - name: CSV string feldolgozása listává
+      set_fact:
+        my_rows: "{{ csv_content | community.general.from_csv(fieldnames=csv_columns, delimiter=';') }}"
     - name: print
       debug:
         msg: " Ez lett: {{ my_rows }}"
