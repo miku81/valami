@@ -28,4 +28,4 @@
         my_rows: "{{ csv_content | community.general.from_csv(fieldnames=csv_columns, delimiter=';') }}"
     - name: print
       debug:
-        msg: " Ez lett: {{ my_rows }}"
+        msg: " Ez lett: {{ my_rows[1].vcenter_host }}"
