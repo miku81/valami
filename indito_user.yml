@@ -1,0 +1,14 @@
+---
+- name: Ki írta ki ezt a playbookot?
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Ki indította a template-et?
+      ansible.builtin.debug:
+        msg: |
+          A job template-et indította: {{ tower_user_name | default('ismeretlen / nem elérhető') }}
+          (User ID: {{ tower_user_id | default('nincs info') }})
+          Launch típus: {{ tower_job_launch_type | default('nincs info') }}
+          Job ID: {{ tower_job_id | default('nincs info') }}
