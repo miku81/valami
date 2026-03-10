@@ -14,4 +14,3 @@
     - name: Ki indította a template-et? 
       debug:
         msg: "Ez lett az admin users: {{ launched_by_with_a }} Ezzel a userrel inditotta:{{ launched_by }} Tipusa: {{ launched_type }} és az ID: {{ launched_id }}"
-    - name: Ki indította a template-et?
