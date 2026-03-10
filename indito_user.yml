@@ -8,13 +8,10 @@
     - set_fact:
         launched_by: "{{ tower_user_name | trim }}"
         launched_by_with_a: "{{ (tower_user_name | trim) + '-a' }}"
+        launched_id: "{{ tower_job_id | trim }}"
+        launched_type: "{{ tower_job_launch_type | trim }}"
 
-    - debug:
-        msg: "Indította: {{ launched_by_with_a }} ({{ launched_by }})"
+    - name: Ki indította a template-et? 
+      debug:
+        msg: "Ez lett az admin users: {{ launched_by_with_a }} Ezzel a userrel inditotta:{{ launched_by }} Tipusa: {{ launched_type }} és az ID: {{ launched_id }}"
     - name: Ki indította a template-et?
-      ansible.builtin.debug:
-        msg: |
-          A job template-et indította: {{ tower_user_name | default('ismeretlen / nem elérhető') }}
-          (User ID: {{ tower_user_id | default('nincs info') }})
-          Launch típus: {{ tower_job_launch_type | default('nincs info') }}
-          Job ID: {{ tower_job_id | default('nincs info') }}
