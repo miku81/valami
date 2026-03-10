@@ -5,6 +5,12 @@
   gather_facts: no
 
   tasks:
+    - set_fact:
+        launched_by: "{{ tower_user_name | trim }}"
+        launched_by_with_a: "{{ (tower_user_name | trim) + '-a' }}"
+
+    - debug:
+        msg: "Indította: {{ launched_by_with_a }} ({{ launched_by }})"
     - name: Ki indította a template-et?
       ansible.builtin.debug:
         msg: |
